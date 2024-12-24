@@ -1,104 +1,104 @@
 package structureTests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.jackw.structures.LinkedList;
 import com.jackw.structures.Node;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class LinkedListTest {
 
-    @Test
-    void whenAppendNodeCalled_thenNodeAddedToLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenAppendNodeCalled_thenNodeAddedToLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.appendNode(new Node(20));
+    link.appendNode(new Node(20));
 
-        assertEquals(10, link.getFirstNode().getValue());
-        assertEquals(20, link.getLastNode().getValue());
-        assertEquals(2, link.getListLength());
-    }
+    assertEquals(10, link.getFirstNode().getValue());
+    assertEquals(20, link.getLastNode().getValue());
+    assertEquals(2, link.getListLength());
+  }
 
-    @Test
-    void whenPrependNodeCalled_thenNodeAddedToLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenPrependNodeCalled_thenNodeAddedToLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.prependNode(new Node(20));
+    link.prependNode(new Node(20));
 
-        assertEquals(10, link.getLastNode().getValue());
-        assertEquals(20, link.getFirstNode().getValue());
-        assertEquals(2, link.getListLength());
-    }
+    assertEquals(10, link.getLastNode().getValue());
+    assertEquals(20, link.getFirstNode().getValue());
+    assertEquals(2, link.getListLength());
+  }
 
-    @Test
-    void whenRemoveFirstNodeCalled_thenFirstNodeRemovedFromLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenRemoveFirstNodeCalled_thenFirstNodeRemovedFromLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.prependNode(new Node(20));
+    link.prependNode(new Node(20));
 
-        assertEquals(10, link.getLastNode().getValue());
-        assertEquals(20, link.getFirstNode().getValue());
-        assertEquals(2, link.getListLength());
+    assertEquals(10, link.getLastNode().getValue());
+    assertEquals(20, link.getFirstNode().getValue());
+    assertEquals(2, link.getListLength());
 
-        link.removeFirstNode();
+    link.removeFirstNode();
 
-        assertEquals(10, link.getFirstNode().getValue());
-        assertEquals(1, link.getListLength());
-    }
+    assertEquals(10, link.getFirstNode().getValue());
+    assertEquals(1, link.getListLength());
+  }
 
-    @Test
-    void whenRemoveEndNodeCalled_thenEndNodeRemovedFromLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenRemoveEndNodeCalled_thenEndNodeRemovedFromLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.prependNode(new Node(20));
+    link.prependNode(new Node(20));
 
-        assertEquals(10, link.getLastNode().getValue());
-        assertEquals(20, link.getFirstNode().getValue());
-        assertEquals(2, link.getListLength());
+    assertEquals(10, link.getLastNode().getValue());
+    assertEquals(20, link.getFirstNode().getValue());
+    assertEquals(2, link.getListLength());
 
-        link.removeEndNode();
+    link.removeEndNode();
 
-        assertEquals(20, link.getFirstNode().getValue());
-        assertEquals(1, link.getListLength());
-    }
+    assertEquals(20, link.getFirstNode().getValue());
+    assertEquals(1, link.getListLength());
+  }
 
-    @Test
-    void whenAppendNodeByValueCalled_thenNodeAddedToLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenAppendNodeByValueCalled_thenNodeAddedToLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.appendNodeByValue(20);
+    link.appendNodeByValue(20);
 
-        assertEquals(10, link.getFirstNode().getValue());
-        assertEquals(20, link.getLastNode().getValue());
-        assertEquals(2, link.getListLength());
-    }
+    assertEquals(10, link.getFirstNode().getValue());
+    assertEquals(20, link.getLastNode().getValue());
+    assertEquals(2, link.getListLength());
+  }
 
-    @Test
-    void whenPrependNodeByValueCalled_thenNodeAddedToLinkedList() {
-        Node nodeA = new Node(10);
-        LinkedList link = new LinkedList(nodeA);
+  @Test
+  void whenPrependNodeByValueCalled_thenNodeAddedToLinkedList() {
+    Node nodeA = new Node(10);
+    LinkedList link = new LinkedList(nodeA);
 
-        link.printLinkedList();
+    link.printLinkedList();
 
-        link.prependNodeByValue(20);
+    link.prependNodeByValue(20);
 
-        assertEquals(10, link.getLastNode().getValue());
-        assertEquals(20, link.getFirstNode().getValue());
-        assertEquals(2, link.getListLength());
-    }
+    assertEquals(10, link.getLastNode().getValue());
+    assertEquals(20, link.getFirstNode().getValue());
+    assertEquals(2, link.getListLength());
+  }
 }

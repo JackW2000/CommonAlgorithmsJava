@@ -1,60 +1,60 @@
 package structureTests;
 
-import com.jackw.structures.Node;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import com.jackw.structures.Node;
+import org.junit.jupiter.api.Test;
+
 class NodeTest {
 
-    @Test
-    void whenNodeIsInitialisedWithValue_thenGetValueReturnsThatValue() {
-        Node nodeA = new Node(10);
+  @Test
+  void whenNodeIsInitialisedWithValue_thenGetValueReturnsThatValue() {
+    Node nodeA = new Node(10);
 
-        assertEquals(10, nodeA.getValue());
-    }
+    assertEquals(10, nodeA.getValue());
+  }
 
-    @Test
-    void whenNodeIsInitialisedWithValueAndThenUpdated_thenGetValueReturnsUpdatedValue() {
-        Node nodeA = new Node(10);
+  @Test
+  void whenNodeIsInitialisedWithValueAndThenUpdated_thenGetValueReturnsUpdatedValue() {
+    Node nodeA = new Node(10);
 
-        nodeA.setValue(20);
+    nodeA.setValue(20);
 
-        assertEquals(20, nodeA.getValue());
-    }
+    assertEquals(20, nodeA.getValue());
+  }
 
-    @Test
-    void whenSetNextNodeCalled_thenNodeAfterCurrentIsAsExpected() {
-        Node nodeA = new Node(10);
-        Node nodeB = new Node(20);
+  @Test
+  void whenSetNextNodeCalled_thenNodeAfterCurrentIsAsExpected() {
+    Node nodeA = new Node(10);
+    Node nodeB = new Node(20);
 
-        nodeA.setNextNode(nodeB);
+    nodeA.setNextNode(nodeB);
 
-        assertEquals(nodeB, nodeA.getNextNode());
-    }
+    assertEquals(nodeB, nodeA.getNextNode());
+  }
 
-    @Test
-    void whenPreviousNextNodeCalled_thenNodeBeforeCurrentIsAsExpected() {
-        Node nodeA = new Node(10);
-        Node nodeB = new Node(20);
+  @Test
+  void whenPreviousNextNodeCalled_thenNodeBeforeCurrentIsAsExpected() {
+    Node nodeA = new Node(10);
+    Node nodeB = new Node(20);
 
-        nodeA.setPreviousNode(nodeB);
+    nodeA.setPreviousNode(nodeB);
 
-        assertEquals(nodeB, nodeA.getPreviousNode());
-    }
+    assertEquals(nodeB, nodeA.getPreviousNode());
+  }
 
-    @Test
-    void whenGetNextNodeCalledAndNextNodeIsNull_thenNullIsReturned() {
-        Node nodeA = new Node(10);
+  @Test
+  void whenGetNextNodeCalledAndNextNodeIsNull_thenNullIsReturned() {
+    Node nodeA = new Node(10);
 
-        assertNull(nodeA.getNextNode());
-    }
+    assertNull(nodeA.getNextNode());
+  }
 
-    @Test
-    void whenGetPreviousNodeCalledAndNextNodeIsNull_thenNullIsReturned() {
-        Node nodeA = new Node(10);
+  @Test
+  void whenGetPreviousNodeCalledAndNextNodeIsNull_thenNullIsReturned() {
+    Node nodeA = new Node(10);
 
-        assertNull(nodeA.getPreviousNode());
-    }
+    assertNull(nodeA.getPreviousNode());
+  }
 }
